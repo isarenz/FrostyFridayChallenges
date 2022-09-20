@@ -28,7 +28,7 @@ INSERT INTO week_14 VALUES ('Il Segreto', 'Italy', NULL, NULL, NULL, NULL);
 INSERT INTO week_14 VALUES ('Frosty Man', 'UK', 'Rescued a delegation of data engineers from a DevOps conference', 'Knows, by memory, 15 definitions of an obscure codex known as "the data mesh"', 'can copy and paste from StackOverflow with the blink of an eye', NULL);
 
  
---View the content of the data 
+--View the content of the table 
 SELECT * FROM week_14;
 
 
