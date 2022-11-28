@@ -27,14 +27,6 @@ select metadata$filename as file_name
 from @frostyfridaystage_week3/keywords.csv
 ;
 
---Query one of the data files in the stage (eg.week3_data1)
-select metadata$filename as file_name
-,      metadata$file_row_number as file_row_number
-,      $1
-,      $2 
-from @frostyfridaystage_week3/week3_data1.csv
-;
-
 
 --Create table 
 create or replace table week_3 (
