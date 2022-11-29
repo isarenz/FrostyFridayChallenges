@@ -1,5 +1,5 @@
-create database frostyfriday;
-create schema frostyfridayschema;
+use database frostyfriday;
+use schema frostyfridayschema;
 
 create or replace file format mycsvformat
   type = 'CSV'
