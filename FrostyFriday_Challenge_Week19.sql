@@ -5,7 +5,7 @@ use schema FROSTYFRIDAYSCHEMA;
 
 --Set the number of years to generate
 SELECT TO_DATE('2000-01-01','YYYY-MM-DD') AS start_date, 
-ROW_NUMBER() OVER(ORDER BY sl) AS row_numbers,
+ROW_NUMBER() OVER(ORDER BY start_date) AS row_numbers,
 DATEADD(DAY, row_numbers, start_date) AS v_date
 FROM TABLE(GENERATOR(rowcount => 9000));
 
