@@ -18,7 +18,7 @@ select $start_date, $end_date;
 alter session set week_of_year_policy = 1;
 
 --create the table
-create or replace table week_18 as
+create or replace table week_19 as
 (select 
        dateadd(d, (row_number() over (order by null))-1, $start_date) as cal_date,
        year(cal_date) as "YEAR", 
@@ -31,7 +31,7 @@ create or replace table week_18 as
 from table(generator(rowcount=>9000)));
 
 --Check the table
-select * from week_18;
+select * from week_19;
 
 
 --Create a function to calculate the number of business days between 2 dates
@@ -39,7 +39,7 @@ create or replace function calculate_business_days(from_date date, till_date dat
     returns number
 as '
 select count(*)
-from week_18 
+from week_19 
 where day_of_week not in (6,7) 
 and cal_date between from_date and (till_date - (not include_2nd)::number)
 ';
